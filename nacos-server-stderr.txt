@@ -1,0 +1,2 @@
+docker: Error response from daemon: Conflict. The container name "/nacos-server" is already in use by container "8a9309da011defdbf7f14a8356405c99e05af0ad58c2b8c21bf7531d2bab7c7e". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.

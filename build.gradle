@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'org.graalvm.buildtools.native' version '0.9.22'
+}
+
+group 'indi.yuluo'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'com.alibaba.nacos:nacos-client:2.2.1'
+    testImplementation 'org.assertj:assertj-core:3.22.0'
+    testImplementation 'org.awaitility:awaitility:4.2.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+// graalvm native 相关配置
+graalvmNative {
+    agent {
+        // 设置代理模式
+        defaultMode = "conditional"
+        modes {
+            // 引入 conditional 的过滤文件配置
+            conditional  {
+                userCodeFilterPath = "metadata-user-code-filter.json"
+            }
+            // conditional 使用不了 access-filter 和 caller-filter 具体自己可以创建 demo y
+            metadataCopy {
+                mergeWithExisting = true
+                inputTaskNames.add("test")
+                outputDirectories.add("src/test/resources/META-INF/native-image/com.alibaba.nacos/nacos-jni")
+            }
+        }
+    }
+    // 指定运行参数 如果在 main 中使用 main {} test 使用 test {}
+    binaries {
+        test {
+            buildArgs("--enable-url-protocols=http")
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="indi.yuluo.nacos.NacosClientTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-06-23T14:08:14" hostname="DESKTOP-JJ1AQGL" time="0.197">
+  <properties/>
+  <testcase name="testAddConfig()" classname="indi.yuluo.nacos.NacosClientTest" time="0.069"/>
+  <testcase name="testGetConfig()" classname="indi.yuluo.nacos.NacosClientTest" time="0.082"/>
+  <system-out><![CDATA[Starting Nacos Server ...
+Nacos server started
+Keep-Alive--->[timeout=60]
+Transfer-Encoding--->[chunked]
+null--->[HTTP/1.1 200]
+Config-Type--->[text]
+Connection--->[keep-alive]
+Last-Modified--->[Fri, 23 Jun 2023 14:00:12 GMT]
+Pragma--->[no-cache]
+Date--->[Fri, 23 Jun 2023 14:08:14 GMT]
+Content-MD5--->[098f6bcd4621d373cade4e832627b4f6]
+Cache-Control--->[no-cache,no-store]
+Content-Security-Policy--->[script-src 'self']
+Expires--->[Thu, 01 Jan 1970 00:00:00 GMT]
+Content-Type--->[text/plain;charset=UTF-8]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

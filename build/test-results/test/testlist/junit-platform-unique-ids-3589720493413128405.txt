@@ -1,0 +1,2 @@
+[engine:junit-jupiter]/[class:indi.yuluo.nacos.NacosClientTest]/[method:testAddConfig()]
+[engine:junit-jupiter]/[class:indi.yuluo.nacos.NacosClientTest]/[method:testGetConfig()]
